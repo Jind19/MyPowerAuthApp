@@ -1,0 +1,14 @@
+services:
+  auth-service:
+    build: .
+    container_name: auth-service
+    ports:
+      - "9080:9080"
+    env_file:
+      - .env
+    networks:
+      - micro-net
+
+networks:
+  micro-net:
+    external: true

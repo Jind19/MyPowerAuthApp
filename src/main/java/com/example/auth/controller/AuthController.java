@@ -24,6 +24,8 @@ public class AuthController {
         String email = user.getEmail();
         String picture = user.getAttribute("picture");
 
+        System.out.println(user.getAttributes());
+
         model.addAttribute("name", fullName);
         model.addAttribute("email", email);
         model.addAttribute("picture", picture);
