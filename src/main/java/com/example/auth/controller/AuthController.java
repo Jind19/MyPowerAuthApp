@@ -19,9 +19,14 @@ public class AuthController {
 
     @GetMapping("/dashboard")
     public String dashboard(Model model, @AuthenticationPrincipal OidcUser user) {
-        model.addAttribute("name", user.getFullName());
-        model.addAttribute("email", user.getEmail());
-        model.addAttribute("picture", user.getPicture());
+
+        String fullName = user.getAttribute("name");
+        String email = user.getEmail();
+        String picture = user.getAttribute("picture");
+
+        model.addAttribute("name", fullName);
+        model.addAttribute("email", email);
+        model.addAttribute("picture", picture);
         return "dashboard";
     }
 
