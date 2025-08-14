@@ -1,5 +1,6 @@
 server:
   port: 9080
+  forward-headers-strategy: framework
 
 spring:
   security:
@@ -13,7 +14,7 @@ spring:
               - openid
               - profile
               - email
-            redirect-uri: "http://myapp123.duckdns.org/login/oauth2/code/google"
+            redirect-uri: "https://myapp123.duckdns.org/login/oauth2/code/google"
         provider:
           google:
             authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
