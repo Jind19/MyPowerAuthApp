@@ -3,9 +3,10 @@ services:
     build: .
     container_name: auth-service
     ports:
-      - "9080:9080"
+      - "127.0.0.1:9080:9080"
     env_file:
       - .env
+    restart: unless-stopped
     networks:
       - micro-net
 
